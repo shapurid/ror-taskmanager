@@ -1,2 +1,32 @@
-h1 Users#new
-p Find me in app/views/users/new.html.slim
+= content_for :content do
+    .row
+      .col
+      .col-5
+        h3.mb-4 = t('views.users.sign_up')
+        = form_with model: @user do |form|
+          .mt-3
+            = form.label t('views.users.name'), class: 'form-label'
+            - if @user.errors[:name].any?
+              = form.text_field :name, class: 'form-control is-invalid'
+              .invalid-feedback 454545
+            - else
+              = form.text_field :name, class: 'form-control'
+          .mt-3
+            = form.label t('views.users.email'), class: 'form-label'
+            - if @user.errors[:email].any?
+              = form.text_field :email, class: 'form-control is-invalid'
+              .invalid-feedback 454545
+            - else
+              = form.text_field :email, class: 'form-control'
+          .mt-3
+            = form.label t('views.users.password'), class: 'form-label'
+            - if @user.errors[:password].any?
+              = form.text_field :password, class: 'form-control is-invalid'
+              .invalid-feedback 454545
+            - else
+              = form.text_field :password, class: 'form-control'
+          .mt-3
+            = form.label t('views.users.password_confirmation'), class: 'form-label'
+            = form.text_field :password_confirmation, class: 'form-control'
+          = form.submit t('views.users.submit'), class: 'btn btn-warning btn-block mt-3'
+      .col

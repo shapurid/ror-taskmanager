@@ -2,7 +2,7 @@ doctype html
 html
   head
     meta content='text/html; charset=UTF-8' http-equiv='Content-Type' /
-    title Taskmanager
+    title = t('views.layouts.app_name')
     meta content='width=device-width,initial-scale=1' name='viewport' /
     = csrf_meta_tags
     = csp_meta_tag
@@ -12,7 +12,7 @@ html
     header.sticky-top
       nav.navbar.navbar-expand-md.navbar-dark.bg-dark
         .container.d-flex
-          a.navbar-brand href=root_url Navbar
+          a.navbar-brand href=root_url = t('views.layouts.app_name')
           button.navbar-toggler[
             aria-controls="navbarNavDropdown"
             aria-expanded="false"
@@ -24,13 +24,17 @@ html
           #navbarNavDropdown.collapse.navbar-collapse
             ul.navbar-nav.me-auto
               li.nav-item.active
-                a.nav-link aria-current="page" href="#" Home
+                a.nav-link aria-current="page" href="#" = t('views.layouts.home')
               li.nav-item
-                a.nav-link href="#" Features
+                a.nav-link href="#" = t('views.layouts.users')
               li.nav-item
-                a.nav-link href="#" Pricing
+                a.nav-link href="#" = t('views.layouts.tasks')
+              li.nav-item
+                a.nav-link href="#" = t('views.layouts.task_labels')
             ul.navbar-nav.d-flex
               li.nav-item.me-1
-                a.btn.btn-light href='#' SignIn
+                a.btn.btn-light href='#' = t('views.layouts.sign_in')
               li.nav-item
-                a.btn.btn-outline-primary href='#' SignUp
+                a.btn.btn-outline-primary href=new_user_url = t('views.layouts.sign_up')
+    main.mt-2.container(role="main")
+      = yield :content

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'users/new'
   root 'home#index'
+  resources :users, only: %i[index show new create]
 end

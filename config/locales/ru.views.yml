@@ -1,0 +1,18 @@
+ru:
+  views:
+    layouts:
+      app_name: 'Менеджер задач'
+      home: 'Домой'
+      users: 'Пользователи'
+      tasks: 'Задачи'
+      task_labels: 'Тэги'
+      sign_in: 'Войти'
+      sign_up: 'Регистрация'
+      sign_out: 'Выйти'
+    users:
+      sign_up: 'Регистрация'
+      name: 'Имя:'
+      email: 'E-mail:'
+      password: 'Пароль:'
+      password_confirmation: 'Подтверждение пароля:'
+      submit: 'Зарегистрироваться'
